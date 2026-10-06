@@ -1,0 +1,13 @@
+{
+  "name":"L5-S1 • Guia & Controle",
+  "short_name":"L5-S1",
+  "start_url":"./index.html",
+  "scope":"./",
+  "display":"standalone",
+  "theme_color":"#04101d",
+  "background_color":"#04101d",
+  "icons":[
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}

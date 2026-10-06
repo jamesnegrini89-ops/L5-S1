@@ -1,0 +1,16 @@
+L5-S1 MOTION PRO — PUBLICAR COMO SITE
+
+1. Extraia este ZIP.
+2. Crie um repositório no GitHub.
+3. Use Add file > Upload files.
+4. Envie o conteúdo extraído mantendo as pastas. index.html precisa ficar na raiz.
+5. Salve o envio na branch principal.
+6. Abra Settings > Pages.
+7. Source: Deploy from a branch.
+8. Branch: main; pasta: / (root).
+9. Save. Aguarde e abra o endereço exibido pelo GitHub.
+
+Não envie somente o ZIP. Envie os arquivos extraídos.
+Não é necessário usar o projeto Android Studio para publicar este site.
+
+O README.md contém as instruções completas.

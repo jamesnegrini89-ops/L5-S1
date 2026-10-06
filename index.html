@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#05111f">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'">
+  <title>L5-S1 • Guia & Controle</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app" class="app">
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">⌁</div>
+      <div><div class="brand-title">L5-S1</div><div class="brand-sub">Guia & Controle</div></div>
+    </div>
+    <button id="settingsBtn" class="icon-button" aria-label="Ajustes">⚙</button>
+  </header>
+
+  <main id="screenHost">
+    <section class="screen active" id="screen-home" data-screen="home">
+      <article class="week-card card">
+        <div class="week-main">
+          <div class="week-copy">
+            <h1 id="weekTitle">Semana 1 de 8</h1>
+            <div class="phase">Fase: <span id="phaseName">Centralização e alívio da dor</span></div>
+            <div class="progress-ring" id="progressRing"><div><strong id="weekPct">14%</strong><span>da semana</span></div></div>
+          </div>
+          <img class="week-spine" src="./posters/pain_map_realistic.jpg" alt="Ilustração da coluna e trajeto S1">
+        </div>
+        <div class="week-stats">
+          <div><span class="stat-icon fire">◆</span><b id="streakHome">0</b><small>dias seguidos</small></div>
+          <div><span class="stat-icon check">✓</span><b id="sessionsHome">0</b><small>sessões</small></div>
+          <div><span class="stat-icon bars">▥</span><b id="painHome">—</b><small>Dor média</small></div>
+        </div>
+        <button class="primary big" id="homeStartSession">▶ Iniciar sessão guiada</button>
+        <button class="secondary big" id="homeMapBtn">⌖ Ver mapa da dor</button>
+      </article>
+
+      <div class="section-title-row"><h2>Hoje – <span id="todayWeekday">terça-feira</span></h2></div>
+      <div id="todayTasks" class="task-list"></div>
+    </section>
+
+    <section class="screen" id="screen-exercises" data-screen="exercises">
+      <div class="screen-heading"><h1>Exercícios</h1><button id="exerciseSearchBtn" class="icon-button" aria-label="Buscar exercícios">⌕</button></div>
+      <input id="exerciseSearch" class="search-input hidden" placeholder="Buscar exercício" aria-label="Buscar exercício" type="search">
+      <div id="exerciseFilters" class="chips"></div>
+      <div id="exerciseList" class="exercise-list"></div>
+    </section>
+
+    <section class="screen" id="screen-session" data-screen="session">
+      <div class="session-topline"><button id="sessionBack" class="icon-button" aria-label="Voltar ao início">‹</button><span id="sessionLabel">☀ Rotina da manhã</span><span id="sessionCount">1 de 4</span></div>
+      <h1 id="sessionExerciseTitle">De bruços relaxado</h1>
+      <p id="sessionExerciseSub" class="subtitle">Centralização da dor</p>
+      <div class="video-shell">
+        <video id="sessionVideo" muted loop playsinline controls preload="metadata" aria-label="Demonstração humana em 3D do exercício"></video>
+        <button id="sessionPlayOverlay" class="play-overlay" aria-label="Reproduzir demonstração">▶</button>
+      </div>
+      <div class="demo-caption"><span id="sessionDemoLabel">Demonstração humana em 3D</span><label>Velocidade <select id="sessionSpeed" aria-label="Velocidade da demonstração"><option value="0.5">0,5×</option><option value="0.75">0,75×</option><option value="1" selected>1×</option></select></label></div><p id="sessionPhase" class="motion-phase">Movimento com câmera fixa</p>
+      <div class="rep-control">
+        <button id="repMinus" aria-label="Diminuir meta">−</button>
+        <div class="rep-dial"><strong id="repCount">10</strong><span id="repUnit">repetições</span></div>
+        <button id="repPlus" aria-label="Aumentar meta">+</button>
+      </div>
+      <button id="timerPlay" class="secondary timer-button hidden">Iniciar cronômetro</button><p id="timerStatus" class="timer-status" aria-live="polite"></p>
+      <p id="sessionHint" class="session-hint">Siga o movimento do vídeo e faça no seu ritmo.</p>
+      <button id="sessionNext" class="primary big">Concluir e próximo →</button>
+    </section>
+
+    <section class="screen" id="screen-map" data-screen="map">
+      <div class="screen-heading"><h1>Mapa da Dor</h1><button class="icon-button" id="mapInfo">ⓘ</button></div>
+      <div class="view-toggle"><button data-map-view="front">Vista frontal</button><button data-map-view="back" class="active">Vista posterior</button><button data-map-view="left">Lado esquerdo</button></div>
+      <article class="map-card card">
+        <div class="map-options">
+          <h3>Marque até onde<br>vai sua dor</h3><label><input type="radio" name="painRegion" value="-1"> Sem sintomas</label>
+          <label><input type="radio" name="painRegion" value="0"> Apenas lombar</label>
+          <label><input type="radio" name="painRegion" value="1"> Nádega</label>
+          <label><input type="radio" name="painRegion" value="2"> Coxa</label>
+          <label><input type="radio" name="painRegion" value="3"> Panturrilha</label>
+          <label><input type="radio" name="painRegion" value="4" checked> Pé / dedos</label>
+          <div class="legend"><span class="legend-blue"></span>L5-S1<br><span class="legend-red"></span>Nervo ciático (S1)</div>
+        </div>
+        <div class="map-human-wrap">
+          <img class="map-human" src="./posters/pain_map_realistic.jpg" alt="Corpo humano posterior com trajeto lombar e ciático">
+          <div id="mapGlow" class="map-glow"><button data-region="0" aria-label="Selecionar lombar"></button><button data-region="1" aria-label="Selecionar nádega"></button><button data-region="2" aria-label="Selecionar coxa"></button><button data-region="3" aria-label="Selecionar panturrilha"></button><button data-region="4" aria-label="Selecionar pé"></button></div>
+        </div>
+      </article>
+      <p class="map-caption">Ilustração do trajeto aproximado • selecione a região mais distante.</p><button id="clearPain" class="secondary">Limpar seleção</button>
+    </section>
+
+    <section class="screen" id="screen-progress" data-screen="progress">
+      <div class="screen-heading"><h1>Progresso</h1><button id="exportBtn" class="icon-button" aria-label="Exportar progresso em CSV">⇩</button></div>
+      <div class="progress-grid">
+        <article class="metric-card"><span>Sequência</span><b id="pStreak">0 dias</b></article>
+        <article class="metric-card"><span>Sessões</span><b id="pSessions">0</b></article>
+        <article class="metric-card"><span>Centralizações</span><b id="pCentral">0</b></article>
+      </div>
+      <article class="card chart-card"><div class="chart-head"><h3>Intensidade da dor</h3><small>Últimas sessões</small></div><canvas id="painChart" height="220" role="img" aria-label="Gráfico da dor registrada"></canvas></article>
+      <article class="card chart-card"><div class="chart-head"><h3>Distância do sintoma</h3><small>Lombar → pé/dedos</small></div><canvas id="regionChart" height="220" role="img" aria-label="Gráfico da região dos sintomas"></canvas></article>
+      <article class="card"><h3>Histórico</h3><div id="historyList" class="history"></div></article>
+    </section>
+
+    <section class="screen" id="screen-detail" data-screen="detail">
+      <div class="detail-head"><button id="detailBack" class="icon-button" aria-label="Voltar para exercícios">‹</button><div><h1 id="detailTitle">Press-up lombar</h1><p id="detailSub">Centralização da dor</p></div><button class="icon-button" id="favoriteBtn" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button></div>
+      <div class="video-shell detail-video-shell">
+        <video id="detailVideo" muted loop playsinline controls preload="metadata" aria-label="Demonstração humana em 3D do exercício"></video>
+        <button id="detailPlayOverlay" class="play-overlay" aria-label="Reproduzir demonstração">▶</button>
+      </div>
+      <div class="demo-caption"><span id="detailDemoLabel">Demonstração humana em 3D</span><label>Velocidade <select id="detailSpeed" aria-label="Velocidade da demonstração"><option value="0.5">0,5×</option><option value="0.75">0,75×</option><option value="1" selected>1×</option></select></label></div><p id="detailPhase" class="motion-phase">Movimento com câmera fixa</p>
+      <div class="detail-tabs" role="tablist" aria-label="Detalhes do exercício"><button class="active" role="tab" data-detail-tab="steps" aria-selected="true">Execução</button><button role="tab" data-detail-tab="muscles" aria-selected="false">Músculos</button><button role="tab" data-detail-tab="tips" aria-selected="false">Dicas</button><button role="tab" data-detail-tab="variants" aria-selected="false">Variações</button></div>
+      <div id="detailPanel" role="tabpanel"><ol id="detailSteps" class="number-steps"></ol></div>
+      <div class="detail-metrics">
+        <div><span>↻ Repetições</span><b id="detailReps">10</b></div>
+        <div><span>↔ Séries</span><b id="detailSets">2–3</b></div>
+        <div><span>◷ Tempo</span><b id="detailTime">—</b></div>
+      </div>
+      <button id="detailStart" class="primary big">▶ Iniciar exercício</button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <button data-nav="home" class="active"><span>⌂</span><small>Início</small></button>
+    <button data-nav="exercises"><span>▦</span><small>Exercícios</small></button>
+    <button data-nav="session"><span>◷</span><small>Sessão</small></button>
+    <button data-nav="map"><span>⌖</span><small>Mapa</small></button>
+    <button data-nav="progress"><span>▥</span><small>Progresso</small></button>
+  </nav>
+</div>
+
+<dialog id="settingsDialog" class="settings-dialog">
+  <button id="settingsClose" class="close-dialog" aria-label="Fechar ajustes">×</button>
+  <h2>Ajustes</h2>
+  <label>Data de início<input id="startDate" type="date"></label>
+  <label>Horário da manhã<input id="morningTime" type="time"></label>
+  <label>Horário do core<input id="coreTime" type="time"></label>
+  <label class="toggle"><span>Voz guiada</span><input id="voiceEnabled" type="checkbox"></label>
+  <label class="toggle"><span>Modo escuro</span><input id="darkMode" type="checkbox" checked></label>
+  <button id="saveSettings" class="primary big">Salvar</button>
+  <button id="backupBtn" class="secondary big">Baixar backup</button>
+  <label class="secondary big file-label">Importar backup<input id="importInput" type="file" accept="application/json" hidden></label>
+</dialog>
+
+<dialog id="finishDialog" class="settings-dialog">
+ <button class="close-dialog" id="finishClose" aria-label="Fechar registro">×</button><h2>Registrar sessão</h2>
+ <label>Dor após a sessão: <strong id="painValue">4 / 10</strong><input id="painAfter" type="range" min="0" max="10" value="4" aria-label="Intensidade da dor após a sessão"></label>
+ <label>Região mais distante dos sintomas<select id="regionAfter"><option value="-1">Sem sintomas</option><option value="0">Apenas lombar</option><option value="1">Nádega</option><option value="2">Coxa</option><option value="3">Panturrilha</option><option value="4">Pé / dedos</option></select></label>
+ <p class="subtle">O registro compara a região selecionada antes e depois desta sessão.</p>
+ <button id="finishSave" class="primary big">Salvar sessão</button>
+</dialog>
+<dialog id="infoDialog" class="settings-dialog"><button id="infoClose" class="close-dialog" aria-label="Fechar informação">×</button><h2 id="infoTitle"></h2><div id="infoContent"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="./state-core.js"></script><script src="./catalog.js"></script><script src="./app.js"></script>
+</body>
+</html>
