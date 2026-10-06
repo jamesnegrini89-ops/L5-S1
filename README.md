@@ -1,47 +1,35 @@
-# L5-S1 Motion Pro — versão web / GitHub Pages
+# L5-S1 Motion Pro — Meu diário 7.0
 
-Este pacote contém a versão web do aplicativo, pronta para hospedagem estática no GitHub Pages. Não exige Android Studio, Gradle, APK, servidor de aplicação ou compilação.
+Versão web do diário pessoal de exercícios. Abra pelo GitHub Pages ou por um servidor web. Todos os exercícios têm referência local: 19 imagens fornecidas pelo usuário e dois vídeos com movimento humano gravado. Não há mais demonstrações 3D anteriores.
 
-## Publicar pelo navegador
+## Usar no dia a dia
 
-1. Extraia o ZIP no computador.
-2. Crie um repositório no GitHub, por exemplo `l5s1-motion-pro`. Um repositório público permite GitHub Pages no plano gratuito.
-3. Abra o repositório e escolha **Add file → Upload files**.
-4. Envie **os arquivos e pastas extraídos**, preservando as pastas. O `index.html` deve aparecer diretamente na raiz do repositório, no mesmo nível deste README. Não envie apenas o ZIP nem uma pasta externa contendo tudo dentro dela.
-5. Confirme o envio com **Commit changes** ou **Propose changes**, conforme a opção exibida. Se o GitHub pedir uma revisão por pull request, conclua o merge para a branch `main`.
-6. Abra **Settings → Pages**.
-7. Em **Source**, selecione **Deploy from a branch**.
-8. Selecione a branch **main** e a pasta **/ (root)**. Clique em **Save**.
-9. Aguarde a publicação terminar. O próprio painel Pages mostrará o endereço do site. Geralmente ele terá o formato `https://SEU_USUARIO.github.io/l5s1-motion-pro/`.
+1. Em **Hoje**, toque em **Escolher meus exercícios**, selecione e ordene sua rotina. Ela se repete nos próximos dias.
+2. Toque no nome do exercício para consultar a referência. Imagens são estáticas e ampliáveis. Os vídeos têm reprodução, pausa, velocidade e tela cheia.
+3. Toque em **+** ao lado de um exercício para marcá-lo como feito. Ele é arquivado imediatamente. O botão **✓** permite editar esse registro.
+4. Se preferir, use **Iniciar minha rotina**. O guia mostra um exercício por vez, com meta ajustável e cronômetro para exercícios com tempo. Ajuste a meta ao que você fará; tocar em concluir registra essa quantidade.
+5. Em **Histórico**, escolha o dia no calendário para consultar, editar ou adicionar execuções. Séries, repetições, tempo e observação são opcionais. É possível registrar dias anteriores.
+6. **Como foi seu dia?** permite anotar sintomas e observações. **Progresso** mantém os gráficos; o mapa da dor fica acessível em Hoje.
+7. Em **Ajustes**, exporte um backup JSON completo. O CSV inclui exercícios, anotações diárias e sintomas das sessões.
 
-Se a branch principal tiver outro nome, selecione esse nome em vez de `main`.
+Os dados ficam neste navegador/aparelho, sem login ou sincronização automática. APK e site têm históricos separados; use exportar/importar backup para transferir. Backups v4–v6 são aceitos e os exercícios de sessões antigas entram no arquivo diário sem inventar quantidades. A mesma chave de armazenamento foi mantida para atualização no mesmo endereço.
 
-## Arquivos da raiz
+## Publicar no GitHub Pages
 
-- `index.html`: página de entrada.
-- `styles.css`: visual e responsividade.
-- `app.js`, `catalog.js`, `state-core.js`: funções, exercícios e registros.
-- `media/`: as 21 demonstrações de exercícios.
-- `posters/`: imagens e mapas.
-- `icons/`: ícones do aplicativo web.
-- `manifest.webmanifest` e `service-worker.js`: instalação e disponibilidade offline após o primeiro acesso completo.
-- `.nojekyll`: instrui o GitHub Pages a publicar os arquivos estáticos sem processá-los como um site Jekyll.
-- `human_refs/`: referências visuais preservadas do projeto.
+Descompacte este pacote e envie **seu conteúdo** ao repositório. `index.html` deve ficar na raiz, junto de `app.js`, `catalog.js`, `state-core.js`, `styles.css`, `media`, `posters`, `icons`, `manifest.webmanifest`, `service-worker.js` e `.nojekyll`.
 
-Se `.nojekyll` não aparecer na seleção de envio, no GitHub use **Add file → Create new file**, dê o nome `.nojekyll`, adicione uma linha vazia e salve.
+Em **Settings → Pages → Build and deployment**, escolha **Deploy from a branch**, branch `main` e pasta `/(root)`. Salve. Não envie apenas o ZIP fechado nem o projeto Android para abrir como site.
 
-## Uso no navegador
+Para atualizar uma versão anterior, substitua os arquivos web e remova as antigas demonstrações de `media`/`human_refs` e os antigos posters de exercícios. Preserve `posters/pain_map_realistic.jpg`, `map-front.svg` e `map-left.svg`. O cache v7 remove os caches anteriores do aplicativo após instalar os arquivos novos. Os dados locais permanecem na mesma chave, se o domínio e caminho de uso não mudarem.
 
-As cinco abas, demonstrações, busca, favoritos, cronômetro, mapa, histórico, CSV e backup JSON funcionam no navegador. A voz usa as vozes disponíveis no navegador e no dispositivo.
+Os caminhos são relativos e funcionam em subpastas de repositório. Após o primeiro acesso completo por HTTPS, o aplicativo e as referências podem abrir offline. A instalação como aplicativo depende do navegador. Não use `file://` para testar o site; use um servidor local, por exemplo `python3 -m http.server 8080` nesta pasta.
 
-Os registros ficam salvos neste navegador e neste dispositivo. Não há sincronização automática entre o site, o APK e outros aparelhos. Para transferir os registros, exporte e importe o backup JSON em Ajustes.
+## Referências fornecidas
 
-No Android com Chrome, a opção **Instalar aplicativo** ou **Adicionar à tela inicial** pode aparecer no menu do navegador. O uso offline depende do primeiro acesso e do carregamento completo dos arquivos. Esse aplicativo web instalado é uma PWA; não é um APK.
+Os arquivos de imagem foram preservados. Os vídeos de Dead bug e Bird-dog foram recortados no tempo, mantendo o enquadramento de 640×360, sem áudio, sem zoom, sem corte espacial e sem movimento sintetizado. São referências enviadas, sem validação clínica do app.
 
-O site possui ilustrações humanas em 3D com câmera fixa. Use os exercícios conforme a orientação recebida; o aplicativo não substitui uma prescrição individual.
+Há avisos específicos em quatro exercícios: press-up (contato do quadril pouco claro), pranchas laterais completa e com joelhos (mão/antebraço) e ponte com marcha (variações misturadas). As ilustrações contêm afirmações próprias sobre alívio e descompressão; o aplicativo não as confirma. As quantidades e rotinas anteriores continuam disponíveis como referência, sem prescrição automática.
 
-## Documentação oficial
+## Verificações desta versão
 
-- Criar um site GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
-- Configurar publicação: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-- Enviar arquivos: https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+Testados em Chromium: todos os 21 materiais, fluxo diário, notas, calendário, edição/exclusão com desfazer, cronômetro e retomada, migração v6, backup/CSV, 84 combinações de telas e tamanhos em dois temas e imagens/vídeos offline, incluindo busca dentro dos vídeos em cache. Sem erros JavaScript ou arquivos ausentes. Android e aparelho físico não foram testados nesta rodada; a compilação exige Android Studio/SDK/Gradle.

@@ -1,74 +1,35 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#05111f">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'">
-  <title>L5-S1 • Guia & Controle</title>
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css">
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ <meta name="theme-color" content="#101c2b">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'">
+ <title>L5-S1 Motion Pro • Meu diário</title><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <div id="app" class="app">
-  <header class="app-header">
-    <div class="brand">
-      <div class="brand-icon">⌁</div>
-      <div><div class="brand-title">L5-S1</div><div class="brand-sub">Guia & Controle</div></div>
-    </div>
-    <button id="settingsBtn" class="icon-button" aria-label="Ajustes">⚙</button>
-  </header>
-
-  <main id="screenHost">
-    <section class="screen active" id="screen-home" data-screen="home">
-      <article class="week-card card">
-        <div class="week-main">
-          <div class="week-copy">
-            <h1 id="weekTitle">Semana 1 de 8</h1>
-            <div class="phase">Fase: <span id="phaseName">Centralização e alívio da dor</span></div>
-            <div class="progress-ring" id="progressRing"><div><strong id="weekPct">14%</strong><span>da semana</span></div></div>
-          </div>
-          <img class="week-spine" src="./posters/pain_map_realistic.jpg" alt="Ilustração da coluna e trajeto S1">
-        </div>
-        <div class="week-stats">
-          <div><span class="stat-icon fire">◆</span><b id="streakHome">0</b><small>dias seguidos</small></div>
-          <div><span class="stat-icon check">✓</span><b id="sessionsHome">0</b><small>sessões</small></div>
-          <div><span class="stat-icon bars">▥</span><b id="painHome">—</b><small>Dor média</small></div>
-        </div>
-        <button class="primary big" id="homeStartSession">▶ Iniciar sessão guiada</button>
-        <button class="secondary big" id="homeMapBtn">⌖ Ver mapa da dor</button>
-      </article>
-
-      <div class="section-title-row"><h2>Hoje – <span id="todayWeekday">terça-feira</span></h2></div>
-      <div id="todayTasks" class="task-list"></div>
-    </section>
-
-    <section class="screen" id="screen-exercises" data-screen="exercises">
-      <div class="screen-heading"><h1>Exercícios</h1><button id="exerciseSearchBtn" class="icon-button" aria-label="Buscar exercícios">⌕</button></div>
-      <input id="exerciseSearch" class="search-input hidden" placeholder="Buscar exercício" aria-label="Buscar exercício" type="search">
-      <div id="exerciseFilters" class="chips"></div>
-      <div id="exerciseList" class="exercise-list"></div>
-    </section>
-
-    <section class="screen" id="screen-session" data-screen="session">
-      <div class="session-topline"><button id="sessionBack" class="icon-button" aria-label="Voltar ao início">‹</button><span id="sessionLabel">☀ Rotina da manhã</span><span id="sessionCount">1 de 4</span></div>
-      <h1 id="sessionExerciseTitle">De bruços relaxado</h1>
-      <p id="sessionExerciseSub" class="subtitle">Centralização da dor</p>
-      <div class="video-shell">
-        <video id="sessionVideo" muted loop playsinline controls preload="metadata" aria-label="Demonstração humana em 3D do exercício"></video>
-        <button id="sessionPlayOverlay" class="play-overlay" aria-label="Reproduzir demonstração">▶</button>
-      </div>
-      <div class="demo-caption"><span id="sessionDemoLabel">Demonstração humana em 3D</span><label>Velocidade <select id="sessionSpeed" aria-label="Velocidade da demonstração"><option value="0.5">0,5×</option><option value="0.75">0,75×</option><option value="1" selected>1×</option></select></label></div><p id="sessionPhase" class="motion-phase">Movimento com câmera fixa</p>
-      <div class="rep-control">
-        <button id="repMinus" aria-label="Diminuir meta">−</button>
-        <div class="rep-dial"><strong id="repCount">10</strong><span id="repUnit">repetições</span></div>
-        <button id="repPlus" aria-label="Aumentar meta">+</button>
-      </div>
-      <button id="timerPlay" class="secondary timer-button hidden">Iniciar cronômetro</button><p id="timerStatus" class="timer-status" aria-live="polite"></p>
-      <p id="sessionHint" class="session-hint">Siga o movimento do vídeo e faça no seu ritmo.</p>
-      <button id="sessionNext" class="primary big">Concluir e próximo →</button>
-    </section>
-
+ <header class="app-header"><div class="brand"><div class="brand-icon"></div><div><div class="brand-title">L5-S1 <span>Motion Pro</span></div><div class="brand-sub">Meu acompanhamento diário</div></div></div><button id="settingsBtn" class="icon-button" aria-label="Abrir ajustes">⚙</button></header>
+ <main id="screenHost">
+ <section class="screen active" id="screen-home" data-screen="home">
+  <div class="day-heading"><p class="eyebrow" id="todayDate"></p><h1>Um exercício de cada vez.</h1><p class="subtitle">Sua rotina, no seu ritmo.</p></div>
+  <article class="card today-card"><div class="section-title-row"><div><span class="eyebrow">HOJE</span><h2 id="todayProgressTitle">Vamos começar?</h2></div><span class="completion-badge" id="todayPct">0%</span></div><progress id="todayProgress" max="100" value="0" aria-label="Progresso da rotina de hoje"></progress><div class="mini-stats"><span><b id="todayCount">0</b> exercícios feitos</span><span><b id="streakHome">0</b> dias seguidos</span></div><button class="primary big" id="homeStartSession">Montar minha rotina</button></article>
+  <div class="section-title-row"><h2>Minha rotina</h2><button id="editRoutine" class="text-button">Editar</button></div><div id="todayExercises" class="daily-list"></div>
+  <button id="homeQuickAdd" class="secondary big">+ Registrar outro exercício</button>
+  <div class="section-title-row"><h2>Como foi seu dia?</h2><button id="homeDayNote" class="text-button">Anotar</button></div><button id="todayNoteSummary" class="card note-summary"></button>
+  <div class="utility-row"><button id="homeMapBtn" class="secondary">Mapa da dor</button><button id="homeHistoryBtn" class="secondary">Ver histórico</button></div>
+  <details class="preset-section"><summary>Rotinas da versão anterior</summary><p class="subtle">Sequências existentes. Escolha apenas os exercícios orientados para você.</p><div id="todayTasks" class="task-list"></div></details>
+ </section>
+ <section class="screen" id="screen-exercises" data-screen="exercises"><div class="screen-heading"><div><p class="eyebrow">SUAS REFERÊNCIAS</p><h1>Exercícios</h1></div><span class="count-badge">21</span></div><input id="exerciseSearch" class="search-input" placeholder="Buscar pelo nome do exercício" aria-label="Buscar exercício" type="search"><div id="exerciseFilters" class="chips"></div><div id="exerciseList" class="exercise-list"></div></section>
+ <section class="screen" id="screen-session" data-screen="session"><div class="session-topline"><button id="sessionBack" class="icon-button" aria-label="Pausar e voltar para hoje">‹</button><span id="sessionLabel"></span><span id="sessionCount"></span></div><progress id="sessionProgress" max="100" value="0" aria-label="Progresso da sessão"></progress><h1 id="sessionExerciseTitle"></h1><p id="sessionExerciseSub" class="subtitle"></p>
+<div class="media-shell" id="sessionMedia">
+ <video id="sessionVideo" class="hidden" muted loop playsinline controls preload="metadata" aria-label="Vídeo do exercício enviado por você"></video>
+ <button id="sessionImageButton" class="image-button hidden" aria-label="Ampliar a imagem do exercício"><img id="sessionImage" alt=""></button>
+ </div><div class="demo-caption"><span id="sessionDemoLabel"></span><label id="sessionSpeedLabel" class="hidden">Velocidade <select id="sessionSpeed" aria-label="Velocidade do vídeo"><option value="0.5">0,5×</option><option value="0.75">0,75×</option><option value="1" selected>1×</option></select></label></div>
+ <p id="sessionReview" class="review-note hidden"></p>
+ <details class="reference-info"><summary>Sobre esta referência</summary><p>Material enviado por você. Fotos mostram posições, sem animar o movimento. As ilustrações e suas afirmações sobre alívio ou descompressão não foram validadas clinicamente. Use a execução e as quantidades orientadas para você.</p></details>
+ <div class="rep-control"><button id="repMinus" aria-label="Diminuir meta">−</button><div class="rep-dial"><strong id="repCount">10</strong><span id="repUnit">repetições</span></div><button id="repPlus" aria-label="Aumentar meta">+</button></div><button id="timerPlay" class="secondary timer-button hidden">Iniciar cronômetro</button><p id="timerStatus" class="timer-status" aria-live="polite"></p><p id="sessionHint" class="session-hint"></p><button id="sessionNext" class="primary big">Concluir e próximo</button><p class="subtle center">Cada exercício é arquivado assim que você toca em concluir.</p>
+ </section>
+ <section class="screen" id="screen-history" data-screen="history"><div class="screen-heading"><div><p class="eyebrow">SEU DIÁRIO</p><h1>Histórico</h1></div><button id="historyToday" class="text-button">Hoje</button></div><article class="card calendar-card"><div class="calendar-header"><button id="monthPrev" class="icon-button" aria-label="Mês anterior">‹</button><h2 id="calendarMonth"></h2><button id="monthNext" class="icon-button" aria-label="Próximo mês">›</button></div><div class="weekdays" aria-hidden="true"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div><div id="calendarDays" class="calendar-grid"></div><p class="subtle calendar-key"><span></span> Dia com registro</p></article><div class="section-title-row"><h2 id="archiveDayTitle"></h2><button id="archiveDayNote" class="text-button">Anotar</button></div><p id="archiveSummary" class="subtle"></p><div id="archiveEntries" class="archive-list"></div><button id="archiveAdd" class="secondary big">+ Adicionar registro neste dia</button><article id="archiveNote" class="card archive-note hidden"></article></section>
     <section class="screen" id="screen-map" data-screen="map">
       <div class="screen-heading"><h1>Mapa da Dor</h1><button class="icon-button" id="mapInfo">ⓘ</button></div>
       <div class="view-toggle"><button data-map-view="front">Vista frontal</button><button data-map-view="back" class="active">Vista posterior</button><button data-map-view="left">Lado esquerdo</button></div>
@@ -88,69 +49,36 @@
         </div>
       </article>
       <p class="map-caption">Ilustração do trajeto aproximado • selecione a região mais distante.</p><button id="clearPain" class="secondary">Limpar seleção</button>
-    </section>
-
-    <section class="screen" id="screen-progress" data-screen="progress">
+    </section>    <section class="screen" id="screen-progress" data-screen="progress">
       <div class="screen-heading"><h1>Progresso</h1><button id="exportBtn" class="icon-button" aria-label="Exportar progresso em CSV">⇩</button></div>
       <div class="progress-grid">
         <article class="metric-card"><span>Sequência</span><b id="pStreak">0 dias</b></article>
         <article class="metric-card"><span>Sessões</span><b id="pSessions">0</b></article>
         <article class="metric-card"><span>Centralizações</span><b id="pCentral">0</b></article>
       </div>
-      <article class="card chart-card"><div class="chart-head"><h3>Intensidade da dor</h3><small>Últimas sessões</small></div><canvas id="painChart" height="220" role="img" aria-label="Gráfico da dor registrada"></canvas></article>
+      <p id="progressDiaryStats" class="subtle"></p><article class="card chart-card"><div class="chart-head"><h3>Intensidade da dor</h3><small>Últimos registros</small></div><canvas id="painChart" height="220" role="img" aria-label="Gráfico da dor registrada"></canvas></article>
       <article class="card chart-card"><div class="chart-head"><h3>Distância do sintoma</h3><small>Lombar → pé/dedos</small></div><canvas id="regionChart" height="220" role="img" aria-label="Gráfico da região dos sintomas"></canvas></article>
-      <article class="card"><h3>Histórico</h3><div id="historyList" class="history"></div></article>
+      <article class="card"><h3>Sessões e sintomas</h3><div id="historyList" class="history"></div></article>
     </section>
-
-    <section class="screen" id="screen-detail" data-screen="detail">
-      <div class="detail-head"><button id="detailBack" class="icon-button" aria-label="Voltar para exercícios">‹</button><div><h1 id="detailTitle">Press-up lombar</h1><p id="detailSub">Centralização da dor</p></div><button class="icon-button" id="favoriteBtn" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button></div>
-      <div class="video-shell detail-video-shell">
-        <video id="detailVideo" muted loop playsinline controls preload="metadata" aria-label="Demonstração humana em 3D do exercício"></video>
-        <button id="detailPlayOverlay" class="play-overlay" aria-label="Reproduzir demonstração">▶</button>
-      </div>
-      <div class="demo-caption"><span id="detailDemoLabel">Demonstração humana em 3D</span><label>Velocidade <select id="detailSpeed" aria-label="Velocidade da demonstração"><option value="0.5">0,5×</option><option value="0.75">0,75×</option><option value="1" selected>1×</option></select></label></div><p id="detailPhase" class="motion-phase">Movimento com câmera fixa</p>
-      <div class="detail-tabs" role="tablist" aria-label="Detalhes do exercício"><button class="active" role="tab" data-detail-tab="steps" aria-selected="true">Execução</button><button role="tab" data-detail-tab="muscles" aria-selected="false">Músculos</button><button role="tab" data-detail-tab="tips" aria-selected="false">Dicas</button><button role="tab" data-detail-tab="variants" aria-selected="false">Variações</button></div>
-      <div id="detailPanel" role="tabpanel"><ol id="detailSteps" class="number-steps"></ol></div>
-      <div class="detail-metrics">
-        <div><span>↻ Repetições</span><b id="detailReps">10</b></div>
-        <div><span>↔ Séries</span><b id="detailSets">2–3</b></div>
-        <div><span>◷ Tempo</span><b id="detailTime">—</b></div>
-      </div>
-      <button id="detailStart" class="primary big">▶ Iniciar exercício</button>
-    </section>
-  </main>
-
-  <nav class="bottom-nav" aria-label="Navegação principal">
-    <button data-nav="home" class="active"><span>⌂</span><small>Início</small></button>
-    <button data-nav="exercises"><span>▦</span><small>Exercícios</small></button>
-    <button data-nav="session"><span>◷</span><small>Sessão</small></button>
-    <button data-nav="map"><span>⌖</span><small>Mapa</small></button>
-    <button data-nav="progress"><span>▥</span><small>Progresso</small></button>
-  </nav>
+ <section class="screen" id="screen-detail" data-screen="detail"><div class="detail-head"><button id="detailBack" class="icon-button" aria-label="Voltar">‹</button><div><h1 id="detailTitle"></h1><p id="detailSub"></p></div><button class="icon-button" id="favoriteBtn" aria-label="Adicionar aos favoritos" aria-pressed="false">♡</button></div>
+<div class="media-shell" id="detailMedia">
+ <video id="detailVideo" class="hidden" muted loop playsinline controls preload="metadata" aria-label="Vídeo do exercício enviado por você"></video>
+ <button id="detailImageButton" class="image-button hidden" aria-label="Ampliar a imagem do exercício"><img id="detailImage" alt=""></button>
+ </div><div class="demo-caption"><span id="detailDemoLabel"></span><label id="detailSpeedLabel" class="hidden">Velocidade <select id="detailSpeed" aria-label="Velocidade do vídeo"><option value="0.5">0,5×</option><option value="0.75">0,75×</option><option value="1" selected>1×</option></select></label></div>
+ <p id="detailReview" class="review-note hidden"></p>
+ <details class="reference-info"><summary>Sobre esta referência</summary><p>Material enviado por você. Fotos mostram posições, sem animar o movimento. As ilustrações e suas afirmações sobre alívio ou descompressão não foram validadas clinicamente. Use a execução e as quantidades orientadas para você.</p></details>
+ <div class="detail-tabs" role="tablist" aria-label="Detalhes do exercício"><button class="active" role="tab" data-detail-tab="steps" aria-selected="true">Execução</button><button role="tab" data-detail-tab="muscles" aria-selected="false">Músculos</button><button role="tab" data-detail-tab="tips" aria-selected="false">Dicas</button><button role="tab" data-detail-tab="variants" aria-selected="false">Variações</button></div><div id="detailPanel" role="tabpanel"></div><details class="dose-section"><summary>Quantidades da versão anterior</summary><p class="subtle">Referência do catálogo original. Ajuste à sua orientação.</p><div class="detail-metrics"><div><span>Repetições</span><b id="detailReps"></b></div><div><span>Séries</span><b id="detailSets"></b></div><div><span>Tempo</span><b id="detailTime"></b></div></div></details><button id="detailStart" class="primary big">Iniciar com guia</button><div class="utility-row"><button id="detailLog" class="secondary">Já fiz • registrar</button><button id="detailPlan" class="secondary">+ Minha rotina</button></div></section>
+ </main>
+ <nav class="bottom-nav" aria-label="Navegação principal"><button data-nav="home" class="active"><span></span><small>Hoje</small></button><button data-nav="exercises"><span></span><small>Exercícios</small></button><button data-nav="history"><span></span><small>Histórico</small></button><button data-nav="progress"><span></span><small>Progresso</small></button></nav>
 </div>
-
-<dialog id="settingsDialog" class="settings-dialog">
-  <button id="settingsClose" class="close-dialog" aria-label="Fechar ajustes">×</button>
-  <h2>Ajustes</h2>
-  <label>Data de início<input id="startDate" type="date"></label>
-  <label>Horário da manhã<input id="morningTime" type="time"></label>
-  <label>Horário do core<input id="coreTime" type="time"></label>
-  <label class="toggle"><span>Voz guiada</span><input id="voiceEnabled" type="checkbox"></label>
-  <label class="toggle"><span>Modo escuro</span><input id="darkMode" type="checkbox" checked></label>
-  <button id="saveSettings" class="primary big">Salvar</button>
-  <button id="backupBtn" class="secondary big">Baixar backup</button>
-  <label class="secondary big file-label">Importar backup<input id="importInput" type="file" accept="application/json" hidden></label>
-</dialog>
-
-<dialog id="finishDialog" class="settings-dialog">
- <button class="close-dialog" id="finishClose" aria-label="Fechar registro">×</button><h2>Registrar sessão</h2>
- <label>Dor após a sessão: <strong id="painValue">4 / 10</strong><input id="painAfter" type="range" min="0" max="10" value="4" aria-label="Intensidade da dor após a sessão"></label>
- <label>Região mais distante dos sintomas<select id="regionAfter"><option value="-1">Sem sintomas</option><option value="0">Apenas lombar</option><option value="1">Nádega</option><option value="2">Coxa</option><option value="3">Panturrilha</option><option value="4">Pé / dedos</option></select></label>
- <p class="subtle">O registro compara a região selecionada antes e depois desta sessão.</p>
- <button id="finishSave" class="primary big">Salvar sessão</button>
-</dialog>
-<dialog id="infoDialog" class="settings-dialog"><button id="infoClose" class="close-dialog" aria-label="Fechar informação">×</button><h2 id="infoTitle"></h2><div id="infoContent"></div></dialog>
-<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="routineDialog" class="settings-dialog"><button data-close="routineDialog" class="close-dialog" aria-label="Fechar rotina">×</button><p class="eyebrow">SEU PLANEJAMENTO</p><h2>Minha rotina diária</h2><p class="subtle">Escolha seus exercícios. A rotina se repete nos próximos dias; os dias já arquivados permanecem guardados.</p><div id="routineOrder" class="routine-order"></div><input id="routineSearch" type="search" placeholder="Buscar exercício" aria-label="Buscar na rotina"><div id="routineChoices" class="routine-choices"></div><button id="saveRoutine" class="primary big sticky-save">Salvar rotina</button></dialog>
+<dialog id="recordDialog" class="settings-dialog"><button data-close="recordDialog" class="close-dialog" aria-label="Fechar registro">×</button><h2 id="recordTitle">Registrar exercício</h2><label>Exercício<select id="recordExercise"></select></label><div class="form-row"><label>Dia<input id="recordDay" type="date" required></label><label>Horário<input id="recordTime" type="time" required></label></div><p class="subtle">Quantidades opcionais — anote somente o que você realizou.</p><div class="form-row three"><label>Séries<input id="recordSets" type="number" min="1" max="999" inputmode="numeric" placeholder="—"></label><label>Repetições<input id="recordReps" type="number" min="1" max="9999" inputmode="numeric" placeholder="—"></label><label>Tempo (s)<input id="recordSeconds" type="number" min="1" max="86400" inputmode="numeric" placeholder="—"></label></div><label>Observação<textarea id="recordNote" maxlength="1000" rows="3" placeholder="Como foi este exercício?"></textarea></label><button id="saveRecord" class="primary big">Salvar registro</button><button id="deleteRecord" class="danger big hidden">Excluir este registro</button></dialog>
+<dialog id="dayNoteDialog" class="settings-dialog"><button data-close="dayNoteDialog" class="close-dialog" aria-label="Fechar anotação">×</button><h2 id="dayNoteTitle">Resumo do dia</h2><label>Dor percebida<select id="dayPain"><option value="">Não informar</option></select></label><label>Região mais distante dos sintomas<select id="dayRegion"><option value="">Não informar</option></select></label><label>Minha anotação<textarea id="dayText" maxlength="1000" rows="4" placeholder="Como você se sentiu hoje?"></textarea></label><button id="saveDayNote" class="primary big">Salvar anotação</button></dialog>
+<dialog id="settingsDialog" class="settings-dialog"><button data-close="settingsDialog" class="close-dialog" aria-label="Fechar ajustes">×</button><h2>Ajustes</h2><label>Data de início<input id="startDate" type="date"></label><div class="form-row"><label>Manhã<input id="morningTime" type="time"></label><label>Core<input id="coreTime" type="time"></label></div><p class="subtle">Horários de referência das rotinas anteriores.</p><label class="toggle"><span>Voz guiada</span><input id="voiceEnabled" type="checkbox"></label><label class="toggle"><span>Modo escuro</span><input id="darkMode" type="checkbox" checked></label><button id="saveSettings" class="primary big">Salvar ajustes</button><div class="settings-divider"></div><button id="backupBtn" class="secondary big">Exportar backup completo</button><label class="secondary big file-label">Importar backup<input id="importInput" type="file" accept="application/json" hidden></label><button id="settingsExport" class="secondary big">Exportar diário em CSV</button><p class="subtle">Seus dados ficam neste aparelho. Exporte o backup para guardá-los ou transferir para outro dispositivo.</p><button id="settingsAbout" class="text-button">Sobre as referências e a versão 7.0</button></dialog>
+<dialog id="finishDialog" class="settings-dialog"><button data-close="finishDialog" class="close-dialog" aria-label="Fechar resumo">×</button><h2>Sessão concluída</h2><p class="subtle">Seus exercícios já estão arquivados. O registro de sintomas é opcional.</p><label>Dor após a sessão: <strong id="painValue">0 / 10</strong><input id="painAfter" type="range" min="0" max="10" value="0" aria-label="Intensidade da dor após a sessão"></label><label>Região mais distante dos sintomas<select id="regionAfter"></select></label><button id="finishSave" class="primary big">Salvar sintomas e finalizar</button><button id="finishSkip" class="secondary big">Finalizar sem informar sintomas</button></dialog>
+<dialog id="switchDialog" class="settings-dialog"><button data-close="switchDialog" class="close-dialog" aria-label="Fechar">×</button><h2>Há uma sessão pausada</h2><p class="subtle">Os exercícios já concluídos estão guardados no histórico.</p><button id="resumeDraft" class="primary big">Continuar sessão pausada</button><button id="replaceDraft" class="secondary big">Começar esta nova sessão</button></dialog>
+<dialog id="infoDialog" class="settings-dialog"><button data-close="infoDialog" class="close-dialog" aria-label="Fechar informação">×</button><h2 id="infoTitle"></h2><div id="infoContent"></div></dialog>
+<dialog id="imageDialog" class="image-dialog"><div class="viewer-toolbar"><strong id="viewerTitle"></strong><button id="imageZoom" class="secondary">Ampliar</button><button data-close="imageDialog" class="icon-button" aria-label="Fechar imagem">×</button></div><div id="imageViewport" class="image-viewport"><img id="viewerImage" alt=""></div><p class="subtle center">Imagem original • amplie e deslize para ver os detalhes.</p></dialog>
+<div id="toast" role="status" aria-live="polite"><span id="toastText"></span><button id="toastUndo" class="hidden">Desfazer</button></div>
 <script src="./state-core.js"></script><script src="./catalog.js"></script><script src="./app.js"></script>
-</body>
-</html>
+</body></html>
