@@ -17,5 +17,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "description": "Diário de exercícios com planejamento semanal, séries, relatórios e assistente Gemini opcional."
 }

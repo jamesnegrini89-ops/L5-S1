@@ -6,7 +6,7 @@ let storageProblem='',storedRaw='',state=load(),currentDetail='prone',activeFilt
 let archiveDay=MotionStore.localDay(),calendarDate=new Date(archiveDay+'T12:00:00'),routineDraft=[],editingRecord=null,noteDay=archiveDay,pendingSession=null;
 function load(){try{storedRaw=localStorage.getItem(KEY)||'{}';return MotionStore.normalize(JSON.parse(storedRaw),IDS);}catch(e){storageProblem=e.message;return MotionStore.defaults();}}
 function save(){if(storageProblem){toast('Não foi possível ler seus dados. Importe um backup para continuar.');return false;}try{localStorage.setItem(KEY,JSON.stringify(state));return true;}catch(e){toast('Não foi possível salvar. Exporte um backup antes de sair.');return false;}}
-function commit(change){const previous=JSON.parse(JSON.stringify(state));change();if(save())return true;state=previous;return false;}
+function commit(change){const previous=JSON.parse(JSON.stringify(state));try{change();if(save())return true;state=previous;return false;}catch(e){state=previous;throw e;}}
 function ex(id){return E.find(x=>x.id===id)||E[0];}
 function poster(x){return x.reference.kind==='video'?`./posters/${x.reference.poster}`:`./media/${x.reference.file}`;}
 function media(x){return `./media/${x.reference.file}`;}

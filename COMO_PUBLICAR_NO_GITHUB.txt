@@ -1,14 +1,42 @@
-L5-S1 Motion Pro — SITE 7.0
+L5-S1 MOTION PRO — SITE V8 + GEMINI
 
-1. Descompacte este ZIP.
-2. Envie todos os arquivos e pastas extraídos para a raiz do repositório.
-   O index.html precisa estar na raiz, e não dentro do ZIP.
-3. GitHub: Settings > Pages > Deploy from a branch > main > /(root) > Save.
-4. Abra o endereço publicado pelo GitHub.
+MESMO REPOSITÓRIO DO PROJETO ANDROID
+1. Exporte um backup dos registros atuais do app/site.
+2. Descompacte este ZIP no computador.
+3. No seu repositório GitHub, crie uma pasta chamada docs.
+4. Envie o CONTEÚDO extraído para docs, mantendo as subpastas.
+   O resultado deve ser docs/index.html, docs/app.js, docs/media/ etc.
+   Não envie somente o ZIP fechado. Inclua também .nojekyll.
+5. Abra Settings > Pages > Build and deployment.
+6. Source: Deploy from a branch. Branch: main. Pasta: /docs. Clique Save.
+7. Aguarde a publicação e abra o endereço apresentado em Pages.
 
-Atualização: substitua os arquivos antigos e retire as demonstrações anteriores
-antes de enviar os novos materiais. Exporte o backup do app antes de mudar o
-endereço de publicação, limpar os dados ou trocar de aparelho.
+REPOSITÓRIO DEDICADO SOMENTE AO SITE
+Também pode enviar o conteúdo diretamente à raiz do repositório.
+Nesse caso, escolha main e /(root) em Pages.
+Se você já tem um site publicado, preserve a pasta/endereço atual e substitua
+os arquivos correspondentes. Não apague a pasta Android do repositório.
 
-O projeto Android Studio é outro pacote, utilizado para gerar APK.
-Leia README.md para instruções de uso e detalhes desta versão.
+GEMINI
+No site aberto: Ajustes > Gemini > cole sua chave > modelo
+gemini-3.5-flash-lite > Salvar Gemini > Testar conexão.
+Não escreva a chave nos arquivos do repositório; configure-a somente no app.
+A API do Google tem limites/custos próprios. Sem chave, o diário funciona normalmente.
+
+RECURSOS E DIFERENÇAS
+Inclui as mesmas rotinas, exercícios, 19 imagens, 2 vídeos, metas, séries,
+registros, relatórios e assistente Gemini da V8.
+Lembretes web funcionam com a página aberta. As ações das notificações Android
+(Iniciar/Adiar) pertencem ao APK.
+Backup automático em pasta depende de navegador compatível, autorização e
+página aberta; exportação/importação manual está disponível.
+APK e site têm dados separados. Transfira os registros por backup JSON.
+Se o endereço do site mudar, restaure o backup no novo endereço.
+
+GITHUB PAGES
+A hospedagem de repositórios públicos pode ser usada com GitHub Free.
+O site é publicado na internet. Seus registros permanecem no navegador;
+não envie backups pessoais ao repositório.
+
+Documentação:
+https://docs.github.com/pt/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
