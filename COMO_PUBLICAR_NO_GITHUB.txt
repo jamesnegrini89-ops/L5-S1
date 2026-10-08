@@ -1,4 +1,6 @@
-L5-S1 MOTION PRO — SITE V8 + GEMINI
+L5-S1 MOTION PRO — SITE V9 + ACOMPANHAMENTO GEMINI
+Após configurar a chave, leia GUIA_V9.txt para cadastrar orientações,
+fazer a entrevista diária, revisar a sugestão e registrar sua resposta.
 
 MESMO REPOSITÓRIO DO PROJETO ANDROID
 1. Exporte um backup dos registros atuais do app/site.
@@ -25,7 +27,7 @@ A API do Google tem limites/custos próprios. Sem chave, o diário funciona norm
 
 RECURSOS E DIFERENÇAS
 Inclui as mesmas rotinas, exercícios, 19 imagens, 2 vídeos, metas, séries,
-registros, relatórios e assistente Gemini da V8.
+registros, relatórios e assistente Gemini da V9 e o acompanhamento diário.
 Lembretes web funcionam com a página aberta. As ações das notificações Android
 (Iniciar/Adiar) pertencem ao APK.
 Backup automático em pasta depende de navegador compatível, autorização e

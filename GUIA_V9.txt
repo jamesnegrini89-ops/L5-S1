@@ -1,0 +1,95 @@
+L5-S1 Motion Pro 9.0 — Acompanhamento diário com Gemini
+
+PRIMEIRO USO
+1. Faça um backup completo da versão anterior, em Ajustes.
+2. Instale o APK de teste em INSTALAR_APK ou abra a versão web em HTTPS.
+   O APK aparece como L5-S1 Motion Pro 9 (teste) e instala separado da V8.
+   Abra o novo app e use Ajustes → Importar backup para transferir o histórico.
+   Não desinstale o antigo antes de conferir seus registros no novo.
+3. Em Ajustes → Gemini, informe sua chave, selecione o modelo e salve.
+   Modelo inicial: gemini-3.5-flash-lite. Use Testar conexão e Consultar modelos.
+4. No Início, abra Orientações do profissional. Marque os exercícios e informe
+   as quantidades já orientadas para sua fase. O aplicativo não lê um laudo
+   automaticamente nem determina a indicação clínica a partir de L5–S1.
+5. Toque em Preparar minha atividade com IA e responda sobre sintomas,
+   resposta à última atividade, disposição, sono, tempo e equipamentos.
+6. Confira o contexto e autorize o envio ao Google. O Gemini seleciona até
+   três perguntas complementares de preferência/organização, de um banco
+   fixo de perguntas. Responda e autorize a consulta que gera a sugestão.
+7. Revise os exercícios, fotos/vídeos e quantidades. Toque em Usar como
+   atividades pendentes de hoje para aplicar e iniciar a sessão guiada.
+8. Registre Melhor / Igual / Pior após cada exercício. Ao encerrar, informe
+   dor, região, esforço e observação, ou escolha não informar.
+9. Na próxima entrevista, informe também como ficou nas horas seguintes
+   e no dia seguinte. O app não coleta essa resposta com o aplicativo fechado.
+
+COMO A SELEÇÃO FUNCIONA
+• A IA escolhe somente IDs do catálogo, nunca inventa exercícios ou imagens.
+• As doses são calculadas localmente a partir das metas orientadas: habitual
+  ou reduzida. Não existe progressão automática de carga ou de volume.
+• Sono ruim, disposição baixa, resposta tardia desconhecida ou preferência
+  por menor volume limitam as opções ao volume reduzido.
+• Exclui exercícios já registrados hoje, inclusive séries parciais, opções
+  sem os equipamentos informados e movimentos que você não quer hoje.
+• Registros de piora após a última revisão profissional bloqueiam o exercício;
+  piora geral pós-sessão bloqueia novas sugestões até revisão profissional.
+• Aumento de pelo menos 2 pontos na dor pós-sessão, dor pós-sessão ≥7/10 ou
+  sintomas avançando pela perna também pausam novas sugestões.
+• As quatro referências visuais já marcadas para revisão na versão anterior
+  continuam fora da seleção automática. Permanecem no catálogo manual.
+• A entrevista vale até 4 horas e apenas no mesmo dia. Novas respostas ou
+  mudanças nas orientações exigem uma nova sugestão.
+• A aplicação troca apenas as atividades pendentes de hoje; conserva registros
+  feitos, pulados e remarcados. Não altera a semana nem as metas manuais.
+• A duração exibida é estimativa, incluindo pausas e transições.
+• Fechar uma sessão não apaga séries já registradas. Use Interromper e
+  registrar como estou para encerrar uma sessão que não será continuada.
+
+LIMITES CLÍNICOS E REFERÊNCIAS
+Este é um diário com assistente de organização, não um médico ou fisioterapeuta.
+Não examina força, sensibilidade, postura ou técnica real; não usa câmera e não
+substitui acompanhamento profissional. Não promete regeneração do disco.
+A expressão “protrusão leve” no exame não basta para escolher o tratamento.
+As regras de volume, janela de 4 horas, duração estimada e limiar de 2 pontos
+são precauções do software, sem validação clínica específica.
+
+Triagem local interrompe sugestões antes de chamar a IA em caso de sinais
+urgentes, piora, sintomas irradiando mais, dor forte ou restrições não avaliadas.
+A triagem depende das respostas e não exclui doenças ou garante segurança.
+Alterações novas de urina/fezes, dormência íntima, perda de sensibilidade ou
+força e trauma importante pedem atendimento urgente. No Brasil: SAMU 192.
+
+Fontes primárias identificadas no app (consultadas em 08/10/2026):
+NHS — Slipped disc: https://www.nhs.uk/conditions/slipped-disc/
+NICE NG59: https://www.nice.org.uk/guidance/ng59/chapter/recommendations
+Essas referências sustentam princípios gerais de atividade conforme tolerância,
+individualização e sinais de alerta, não cada dose ou cada foto do catálogo.
+Não há busca científica em tempo real nem atualização automática de estudos.
+
+DADOS E PRIVACIDADE
+Entrevistas, sugestões, séries, respostas e histórico ficam no dispositivo.
+O backup completo inclui esses dados; guarde-o em local privado.
+A chave Gemini não é incluída em backups/exportações. No Android fica protegida
+pelo Keystore; no site fica na aba, a menos que você marque lembrar no navegador.
+A consulta envia ao Google perfil, respostas e opções disponíveis. Incluir
+histórico é opcional e mostrado no contexto antes de cada consulta: últimos
+30 dias, até 160 registros de exercício, 40 sessões, 30 entrevistas e 40
+respostas pós-sessão. Os filtros locais de segurança atuam mesmo sem envio
+histórico. Não há sincronização automática APK/site; use exportar/importar backup.
+Sem internet, o histórico, fotos, sessões já aplicadas e diário continuam
+funcionando. Criar uma nova sugestão Gemini exige conexão e chave válida.
+
+VALIDAÇÃO
+Testes automatizados com respostas Gemini simuladas, migração/backup,
+triagem, rejeição de IDs/quantidades inválidos, histórico, interrupção por
+piora, retomada e interface em Chromium. Integração real com Google depende
+sua chave/cota/modelo e não foi testada com uma chave pessoal nesta entrega.
+Compilação/lint e detalhes estão em validacao-v9. Não houve teste em aparelho
+Android físico nem validação clínica do acompanhamento.
+O APK é uma compilação de teste, não uma versão assinada para Play Store.
+
+ASSINATURA DO APK
+A chave de teste da V8 não estava disponível nesta compilação. Por isso, o APK
+de teste V9 usa o pacote com.l5s1.motionpro.v9test e pode coexistir com a V8.
+O projeto release mantém com.l5s1.motionpro para assinatura com sua própria
+chave de distribuição. Chaves privadas não são incluídas no projeto.
